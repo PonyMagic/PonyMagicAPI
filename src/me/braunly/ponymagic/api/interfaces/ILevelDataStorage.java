@@ -1,15 +1,24 @@
 package me.braunly.ponymagic.api.interfaces;
 
+import net.minecraft.entity.player.EntityPlayer;
+
 public interface ILevelDataStorage extends INBTDataStorage{
+    /**
+     * Check if exp enough for level up
+     * @return boolean
+     */
+    boolean isLevelUp();
+    /**
+     * Add one level and remove exp.
+     * Fires {@link net.braunly.ponymagic.event.LevelUpEvent}
+     * @param player player entity
+     */
+    void levelUp(EntityPlayer player);
     /**
      * Get current player level.
      * @return level
      */
     int getLevel();
-    /**
-     * Add one level.
-     */
-    void addLevel();
     /**
      * Set player level.
      * @param level level
@@ -21,10 +30,6 @@ public interface ILevelDataStorage extends INBTDataStorage{
      * @return skill points count
      */
     int getFreeSkillPoints();
-    /**
-     * Add one free skill point.
-     */
-    void addFreeSkillPoints();
     /**
      * Add (or remove) free skill points.
      * @param points points count. Can be negative
@@ -46,8 +51,4 @@ public interface ILevelDataStorage extends INBTDataStorage{
      * @param exp exp count. Can be negative
      */
     void addExp(double exp);
-    /**
-     * Remove all exp
-     */
-    void resetExp();
 }
