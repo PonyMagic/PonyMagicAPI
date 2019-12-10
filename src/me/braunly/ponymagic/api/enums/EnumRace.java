@@ -113,7 +113,7 @@ public enum EnumRace {
 		return this.color;
 	}
 
-	public String getlocalizedName() {
+	public String getLocalizedName() {
 		return this.localizedName;
 	}
 
