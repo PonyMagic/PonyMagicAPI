@@ -109,14 +109,26 @@ public enum EnumRace {
 	private final String localizedName;
 	private final String defaultSpell;
 
+	/**
+	 * Get color in TextFormatting format.
+	 * @return race color
+	 */
 	public TextFormatting getColor() {
 		return this.color;
 	}
 
+	/**
+	 * Get localized name.
+	 * @return race name
+	 */
 	public String getLocalizedName() {
 		return this.localizedName;
 	}
 
+	/**
+	 * Get race default spell name.
+	 * @return spell name
+	 */
 	public String getDefaultSpell() {
 		return this.defaultSpell;
 	}
@@ -128,10 +140,20 @@ public enum EnumRace {
 		this.color = color;
 	}
 
+	/**
+	 * Check if race can use spell.
+	 * @param spellName spell name
+	 * @return race color
+	 */
 	public boolean hasSpell(@Nonnull String spellName) {
 		return spells.contains(spellName);
 	}
 
+	/**
+	 * Get race by name.
+	 * @param name race namea
+	 * @return race
+	 */
 	@Nonnull
 	public static Optional<EnumRace> getByName(@Nonnull String name) {
 		for (EnumRace race : EnumRace.values()) {
