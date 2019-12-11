@@ -70,7 +70,7 @@ public enum EnumRace {
 					"solidcore",
 
 					"resist",
-					"burst",
+					"ironskin",
 					"recoil",
 					"repair",
 
