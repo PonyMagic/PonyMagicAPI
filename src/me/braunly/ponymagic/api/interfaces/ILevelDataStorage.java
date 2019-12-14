@@ -1,5 +1,6 @@
 package me.braunly.ponymagic.api.interfaces;
 
+import me.braunly.ponymagic.api.events.LevelUpEvent;
 import net.minecraft.entity.player.EntityPlayer;
 
 public interface ILevelDataStorage extends INBTDataStorage{
@@ -10,7 +11,7 @@ public interface ILevelDataStorage extends INBTDataStorage{
     boolean isLevelUp();
     /**
      * Add one level and remove exp.
-     * Fires {@link net.braunly.ponymagic.event.LevelUpEvent}
+     * Fires {@link LevelUpEvent}
      * @param player player entity
      */
     void levelUp(EntityPlayer player);
