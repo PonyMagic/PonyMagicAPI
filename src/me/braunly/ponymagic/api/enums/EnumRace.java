@@ -16,50 +16,59 @@ public enum EnumRace {
 	),
 	PEGASUS("Пегас", TextFormatting.AQUA, "fly",
 			ImmutableSet.of(
+					"staminaPool",
+					"staminaRegen",
+					"shregen",
+
 					"speed",
+					"haste",
+					"archery",
+					"swish",
+
+					"slowfallauto",
 					"flyspeed",
 					"flyduration",
-					"haste",
-					"slowfallauto",
-					"archery",
-					
-					"swish",
 					"highground",
 					"onedge",
 					"dodging",
-					"dodgingbuff",
-					
-					"staminaPool",
-					"staminaRegen",
-					"shregen"
+					"dodgingbuff"
 			)
 	), 
 	UNICORN("Единорог", TextFormatting.RED, "teleport",
 			ImmutableSet.of(
+					"staminaPool",
+					"staminaRegen",
+					"shregen",
+
 					"teleport",
-					"fireresistance",
-					"hpregen", "unenchant",
+					"hpregen",
+					"unenchant",
 					"solidcore",
 					"tpbed",
-					
 					"shield",
 					"heal",
 					"enchant",
 					"slowfall",
-
 					"tpsurface",
-					"recoil",
 					"slowfall",
 					"revival",
 					"fly",
-					
-					"staminaPool",
-					"staminaRegen",
-					"shregen"
+
+					"blink",
+					"portal",
+					"moonbeam",
+
+					"medallionofsalazar",
+					"readyforduel",
+					"extinguisher"
 			)
 	), 
 	EARTHPONY("Земнопони", TextFormatting.GREEN, "craft",
 			ImmutableSet.of(
+					"staminaPool",
+					"staminaRegen",
+					"shregen",
+
 					"craft",
 					"jump",
 					"grow",
@@ -68,19 +77,18 @@ public enum EnumRace {
 					"strength",
 					"haste",
 					"solidcore",
-
 					"resist",
 					"ironskin",
 					"recoil",
-					"repair",
-
-					"staminaPool",
-					"staminaRegen",
-					"shregen"
+					"repair"
 			)
 	), 
 	ZEBRA("Зебра", TextFormatting.BLUE, "jump",
 			ImmutableSet.of(
+					"staminaPool",
+					"staminaRegen",
+					"shregen",
+
 					"jump",
 					"dispel",
 					"fireresistance",
@@ -96,11 +104,7 @@ public enum EnumRace {
 					"cure",
 					"invert",
 					"extension",
-					"revival",
-
-					"staminaPool",
-					"staminaRegen",
-					"shregen"
+					"revival"
 			)
 	);
 
