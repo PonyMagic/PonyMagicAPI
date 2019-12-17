@@ -57,8 +57,8 @@ public enum EnumRace {
 					"blink",
 					"portal",
 					"moonbeam",
+					"healwave",
 
-					"medallionofsalazar",
 					"readyforduel",
 					"extinguisher"
 			)

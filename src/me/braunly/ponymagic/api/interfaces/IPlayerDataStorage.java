@@ -16,6 +16,11 @@ public interface IPlayerDataStorage {
      */
     ISkillDataStorage getSkillData();
     /**
+     * Get player skills timers data.
+     * @return tick data storage {@link ITickDataStorage)
+     */
+    ITickDataStorage getTickData();
+    /**
      * Get player UUID string.
      * @return uuid string
      */
