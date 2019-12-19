@@ -1,5 +1,7 @@
 package me.braunly.ponymagic.api.interfaces;
 
+import java.util.HashMap;
+
 public interface ITickDataStorage extends INBTDataStorage{
     /**
      * Get timer ticks count for given skill.
@@ -7,6 +9,12 @@ public interface ITickDataStorage extends INBTDataStorage{
      * @return ticks count
      */
     int getTicks(String skillName);
+
+    /**
+     * Get all current timers.
+     * @return hashmap with skill name and ticks
+     */
+    HashMap<String, Integer> getTimers();
 
     /**
      * Check for existance of timer for given skill.
