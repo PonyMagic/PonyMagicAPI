@@ -52,4 +52,10 @@ public interface ILevelDataStorage extends INBTDataStorage{
      * @param exp exp count. Can be negative
      */
     void addExp(double exp);
+
+    /**
+     * Set current exp amount.
+     * @param exp exp amount
+     */
+    void setExp(double exp);
 }
