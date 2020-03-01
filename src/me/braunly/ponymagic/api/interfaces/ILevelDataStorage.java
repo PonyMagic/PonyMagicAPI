@@ -6,15 +6,32 @@ import net.minecraft.entity.player.EntityPlayer;
 public interface ILevelDataStorage extends INBTDataStorage{
     /**
      * Check if exp enough for level up
+     * Deprecated. Use isLevelChange() instead.
      * @return boolean
      */
+    @Deprecated
     boolean isLevelUp();
+
+    /**
+     * Check if level need to be changed
+     * @return boolean
+     */
+    boolean isLevelChange();
     /**
      * Add one level and remove exp.
      * Fires {@link LevelUpEvent}
+     * Deprecated. Use changeLevel() instead
      * @param player player entity
      */
+    @Deprecated
     void levelUp(EntityPlayer player);
+
+    /**
+     * Change level and free skill points in order of exp count
+     * Level up if exp enough for next level and level down if exp not enough for current level
+     */
+    void changeLevel();
+
     /**
      * Get current player level.
      * @return level
