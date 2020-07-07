@@ -1,36 +1,30 @@
 package me.braunly.ponymagic.api.interfaces;
 
+import com.google.common.collect.ImmutableMap;
 import me.braunly.ponymagic.api.events.LevelUpEvent;
-import net.minecraft.entity.player.EntityPlayer;
+
+import java.util.HashMap;
 
 public interface ILevelDataStorage extends INBTDataStorage{
     /**
      * Check if exp enough for level up
-     * Deprecated. Use isLevelChange() instead.
      * @return boolean
      */
-    @Deprecated
     boolean isLevelUp();
 
     /**
-     * Check if level need to be changed
-     * @return boolean
-     */
-    boolean isLevelChange();
-    /**
      * Add one level and remove exp.
      * Fires {@link LevelUpEvent}
-     * Deprecated. Use changeLevel() instead
-     * @param player player entity
      */
-    @Deprecated
-    void levelUp(EntityPlayer player);
+    void levelUp();
 
-    /**
-     * Change level and free skill points in order of exp count
-     * Level up if exp enough for next level and level down if exp not enough for current level
-     */
-    void changeLevel();
+    HashMap<String, HashMap<String, Integer>> getCurrentGoals();
+
+    boolean isCurrentGoal(String questName, String goalName);
+
+    void decreaseGoal(String questName, String goalName);
+
+    void setGoals(ImmutableMap<String, ImmutableMap<String, Integer>> goals);
 
     /**
      * Get current player level.
@@ -58,21 +52,4 @@ public interface ILevelDataStorage extends INBTDataStorage{
      * @param points skill points amount
      */
     void setFreeSkillPoints(int points);
-
-    /**
-     * Get current exp count.
-     * @return exp count
-     */
-    double getExp();
-    /**
-     * Add (or remove) exp
-     * @param exp exp count. Can be negative
-     */
-    void addExp(double exp);
-
-    /**
-     * Set current exp amount.
-     * @param exp exp amount
-     */
-    void setExp(double exp);
 }

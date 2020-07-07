@@ -1,5 +1,7 @@
 package me.braunly.ponymagic.api.interfaces;
 
+import java.util.Map;
+
 public interface ISkillDataStorage extends INBTDataStorage{
     /**
      * Get skill level.
@@ -7,6 +9,7 @@ public interface ISkillDataStorage extends INBTDataStorage{
      * @return skill level
      */
     int getSkillLevel(String name);
+    boolean isAnySkillLearned(Map<String, Integer> skillsMap);
     /**
      * Check if skill learned.
      * @param skillName skill name
