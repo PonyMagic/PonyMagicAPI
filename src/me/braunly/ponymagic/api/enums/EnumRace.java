@@ -74,6 +74,7 @@ public enum EnumRace {
 					"grow",
 					"stepup",
 					"speed",
+					"dash",
 					"strength",
 					"haste",
 					"solidcore",
