@@ -31,7 +31,8 @@ public enum EnumRace {
 					"highground",
 					"onedge",
 					"dodging",
-					"dodgingbuff"
+					"dodgingbuff",
+					"flyhaste"
 			)
 	), 
 	UNICORN("Единорог", TextFormatting.RED, "teleport",
