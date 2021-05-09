@@ -6,8 +6,7 @@ import java.util.Optional;
 public enum EnumQuestGoalType {
     BLOCK,
     ITEM,
-    ENTITY,
-    CUSTOM;
+    ENTITY;
     /**
      * Get quest goal type by name.
      * @param name goal type name
