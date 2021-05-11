@@ -9,8 +9,8 @@ import javax.annotation.ParametersAreNonnullByDefault;
 public class LevelUpEvent extends Event {
 
 	@Nonnull
-	private EntityPlayer player;
-	private int level;
+	private final EntityPlayer player;
+	private final int level;
 
 	public int getLevel() {
 		return level;

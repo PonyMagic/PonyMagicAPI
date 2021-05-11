@@ -9,6 +9,12 @@ public interface ISkillDataStorage extends INBTDataStorage{
      * @return skill level
      */
     int getSkillLevel(String name);
+
+    /**
+     * Check if any skills from given map is learned by player
+     * @param skillsMap skills map
+     * @return bool
+     */
     boolean isAnySkillLearned(Map<String, Integer> skillsMap);
     /**
      * Check if skill learned.

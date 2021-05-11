@@ -18,13 +18,32 @@ public interface ILevelDataStorage extends INBTDataStorage{
      */
     void levelUp();
 
+    /**
+     * Get current player goals.
+     * @return quests hashmap
+     */
     HashMap<String, HashMap<String, Integer>> getCurrentGoals();
 
+    /**
+     * Check is player has goal
+     * @param questName quest
+     * @param goalName goal of quest
+     * @return bool
+     */
     boolean isCurrentGoal(String questName, String goalName);
 
+    /**
+     * Decrease quest goal
+     * @param questName quest name
+     * @param goalName goal name of quest
+     */
     void decreaseGoal(String questName, String goalName);
 
-    void setGoals(ImmutableMap<String, ImmutableMap<String, Integer>> goals);
+    /**
+     * Set new player quests
+     * @param quests quests hashmap
+     */
+    void setGoals(ImmutableMap<String, ImmutableMap<String, Integer>> quests);
 
     /**
      * Get current player level.
