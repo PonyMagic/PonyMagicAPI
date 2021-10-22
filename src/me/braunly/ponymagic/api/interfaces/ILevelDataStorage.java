@@ -36,8 +36,9 @@ public interface ILevelDataStorage extends INBTDataStorage{
      * Decrease quest goal
      * @param questName quest name
      * @param goalName goal name of quest
+     * @return bool result
      */
-    void decreaseGoal(String questName, String goalName);
+    boolean decreaseGoal(String questName, String goalName);
 
     /**
      * Set new player quests
