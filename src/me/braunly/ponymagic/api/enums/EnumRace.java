@@ -1,20 +1,22 @@
 package me.braunly.ponymagic.api.enums;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
 
 import javax.annotation.Nonnull;
+import java.util.Locale;
 import java.util.Optional;
 import java.util.Set;
 
 public enum EnumRace {
-	REGULAR("Регуляр", TextFormatting.WHITE, "cake", ImmutableSet.of()),
-	ALICORN("Аликорн", TextFormatting.LIGHT_PURPLE, "heal",
+	REGULAR(TextFormatting.WHITE, "cake", ImmutableSet.of()),
+	ALICORN(TextFormatting.LIGHT_PURPLE, "heal",
 			ImmutableSet.of(
 					"blink"
 			)
 	),
-	PEGASUS("Пегас", TextFormatting.AQUA, "fly",
+	PEGASUS(TextFormatting.AQUA, "fly",
 			ImmutableSet.of(
 					"staminaPool",
 					"staminaRegen",
@@ -35,7 +37,7 @@ public enum EnumRace {
 					"flyhaste"
 			)
 	), 
-	UNICORN("Единорог", TextFormatting.RED, "teleport",
+	UNICORN(TextFormatting.RED, "teleport",
 			ImmutableSet.of(
 					"staminaPool",
 					"staminaRegen",
@@ -64,7 +66,7 @@ public enum EnumRace {
 					"extinguisher"
 			)
 	), 
-	EARTHPONY("Земнопони", TextFormatting.GREEN, "craft",
+	EARTHPONY(TextFormatting.GREEN, "craft",
 			ImmutableSet.of(
 					"staminaPool",
 					"staminaRegen",
@@ -85,7 +87,7 @@ public enum EnumRace {
 					"repair"
 			)
 	), 
-	ZEBRA("Зебра", TextFormatting.BLUE, "jump",
+	ZEBRA(TextFormatting.BLUE, "jump",
 			ImmutableSet.of(
 					"staminaPool",
 					"staminaRegen",
@@ -112,7 +114,6 @@ public enum EnumRace {
 
 	private final Set<String> spells;
 	private final TextFormatting color;
-	private final String localizedName;
 	private final String defaultSpell;
 
 	/**
@@ -128,7 +129,7 @@ public enum EnumRace {
 	 * @return race name
 	 */
 	public String getLocalizedName() {
-		return this.localizedName;
+		return new TextComponentTranslation("race." + this.name().toLowerCase(Locale.ROOT) + ".name").getUnformattedText();
 	}
 
 	/**
@@ -139,8 +140,7 @@ public enum EnumRace {
 		return this.defaultSpell;
 	}
 
-	EnumRace(String localizedName, TextFormatting color, String defaultSpell, Set<String> spells) {
-		this.localizedName = localizedName; // TODO lang file
+	EnumRace(TextFormatting color, String defaultSpell, Set<String> spells) {
 		this.defaultSpell = defaultSpell;
 		this.spells = spells;
 		this.color = color;
